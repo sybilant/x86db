@@ -6,9 +6,11 @@
 ;;;;
 ;;;; This Source Code Form is "Incompatible With Secondary Licenses", as defined
 ;;;; by the Mozilla Public License, v. 2.0.
-(ns sybilant.x86db)
+(ns sybilant.x86db
+  (:require [clojure.java.io :as io]
+            [clojure.xml :refer [parse]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(defonce db (parse (io/input-stream (io/resource "x86reference.xml"))))
+
+(defn version []
+  [1 11 0])
