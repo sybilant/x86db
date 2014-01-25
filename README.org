@@ -1,10 +1,11 @@
 #+STARTUP: hidestars showall
 * x86db
 ** Introduction
-   An x86 instruction database derived from the [[http://ref.x86asm.net/][x86 reference
-   (http://ref.x86asm.net/)]].
+   An x86 instruction database derived from [[http://ref.x86asm.net/][MazeGen's x86 Opcode and Instruction
+   Reference (http://ref.x86asm.net/)]].
 ** License
-   The x86 Opcode and Instruction Reference used under the following license:
+   MazeGen's x86 Opcode and Instruction Reference used under the following
+   license:
    : 1. If you improve this reference, whether its source files (XML, DTD, XSL
    :    transformations) or any of derived files (in any format), send these
    :    files to the author. The author reserve the right to use these files for
