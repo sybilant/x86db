@@ -4,11 +4,25 @@
    An x86 instruction database derived from the [[http://ref.x86asm.net/][x86 reference
    (http://ref.x86asm.net/)]].
 ** License
+   The x86 Opcode and Instruction Reference used under the following license:
+   : 1. If you improve this reference, whether its source files (XML, DTD, XSL
+   :    transformations) or any of derived files (in any format), send these
+   :    files to the author. The author reserve the right to use these files for
+   :    any purpose.
+   : 2. You can publish source or any derivative files in any form only with
+   :    author's permission and under the following conditions:
+   :    1. Mention the name of the author
+   :    2. Mention this hypertext reference to the source: ref.x86asm.net
+   :    3. Mention this license agreement
+   : 3. You can't sell printed copies of any files (original or derived) of this
+   :    reference, including cases when it is a part of other project.
+
+   Everything else is under the following license:
    : Copyright © 2014 Paul Stadig. All rights reserved.
    : 
-   : This Source Code Form is subject to the terms of the Mozilla Public License,
-   : v. 2.0. If a copy of the MPL was not distributed with this file, You can
-   : obtain one at http://mozilla.org/MPL/2.0/.
+   : This Source Code Form is subject to the terms of the Mozilla Public
+   : License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   : You can obtain one at http://mozilla.org/MPL/2.0/.
    : 
    : This Source Code Form is "Incompatible With Secondary Licenses", as defined
    : by the Mozilla Public License, v. 2.0.
