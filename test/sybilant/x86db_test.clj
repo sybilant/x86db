@@ -13,6 +13,9 @@
 (deftest test-version
   (is (= [1 11 0] (version))))
 
+(deftest test-mnemonics
+  (is (= 697 (count (set (mnemonics db))))))
+
 (deftest test-mnemonic-syntax
   (let [add-syntax (mnemonic-syntax "ADD" db)]
     (testing "mnemonic with explicit operands"

@@ -34,10 +34,15 @@
   (fn [node]
     (= (get-in node [:attrs name]) value)))
 
-(defn mnemonic [label loc]
-  (filter-nodes #(and ((tag-pred :mnem) %)
-                      (= label (first (:content %))))
-                (dfs-seq loc)))
+(defn mnemonic-locs [loc]
+  (filter-nodes (tag-pred :mnem) (dfs-seq loc)))
+
+(defn mnemonics [loc]
+  (map (comp first :content zip/node) (mnemonic-locs loc)))
+
+(defn mnemonic-loc [label loc]
+  (filter-nodes #(= label (first (:content %)))
+                (mnemonic-locs loc)))
 
 (defn parse-explicit-operand [operand node]
   (reduce (fn [operand child]
@@ -62,7 +67,7 @@
       (parse-implicit-operand operand node))))
 
 (defn mnemonic-syntax [label loc]
-  (for [mnemonic (mnemonic label loc)
+  (for [mnemonic (mnemonic-loc label loc)
         :let [operand-nodes (->> mnemonic
                                  (iterate zip/right)
                                  rest
