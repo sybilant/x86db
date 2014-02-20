@@ -1,4 +1,4 @@
-(defproject sybilant/x86db "0.1.0-SNAPSHOT"
+(defproject sybilant/x86db "0.1.0"
   :description "An x86 instruction database derived from MazeGen's x86 Opcode
   and Instruction Reference (http://ref.x86asm.net/)"
   :url "http://github.com/sybilant/x86db/"
