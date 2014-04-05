@@ -21,12 +21,12 @@
     (testing "mnemonic with explicit operands"
       (is (= {:mnemonic "ADD",
               :operands
-              [{:type "b", :addressing "E", :mode "dst"}
-               {:type "b", :addressing "G", :mode "src"}]}
+              [{:type "b", :address "E", :mode "dst"}
+               {:type "b", :address "G", :mode "src"}]}
              (nth add-syntax 0))))
     (testing "mnemonic with implicit operand"
       (is (= {:mnemonic "ADD",
               :operands
               [{:type "b", :group "gen", :nr "0", :mode "dst"}
-               {:type "b", :addressing "I", :mode "src"}]}
+               {:type "b", :address "I", :mode "src"}]}
              (nth add-syntax 4))))))

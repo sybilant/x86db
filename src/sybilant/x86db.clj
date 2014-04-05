@@ -44,27 +44,23 @@
   (filter-nodes #(= label (first (:content %)))
                 (mnemonic-locs loc)))
 
-(defn parse-explicit-operand [operand node]
+(defn parse-operand-children [operand node]
   (reduce (fn [operand child]
-            (assoc operand
-              (case (:tag child)
-                :a :addressing
-                :t :type)
-              (first (:content child))))
+            (if (:tag child)
+              (assoc operand
+                (case (:tag child)
+                  :a :address
+                  :t :type)
+                (first (:content child)))
+              operand))
           operand
           (:content node)))
 
-(defn parse-implicit-operand [operand node]
-  (reduce (fn [operand [name value]]
-            (assoc operand name value))
-          operand
-          (:attrs node)))
-
 (defn parse-operand [node]
   (let [operand {:mode (name (:tag node))}]
-    (if (empty? (:attrs node))
-      (parse-explicit-operand operand node)
-      (parse-implicit-operand operand node))))
+    (-> operand
+        (into (:attrs node))
+        (parse-operand-children node))))
 
 (defn mnemonic-syntax [label loc]
   (for [mnemonic (mnemonic-loc label loc)
