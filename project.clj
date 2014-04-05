@@ -4,4 +4,5 @@
   :url "http://github.com/sybilant/x86db/"
   :license {:name "Mozilla Public License, v. 2.0"
             :url "http://mozilla.org/MPL/2.0/"}
-  :dependencies [[org.clojure/clojure "1.5.1"]])
+  :dependencies [[org.clojure/clojure "1.5.1"]]
+  :profiles {:dev {:dependencies [[pjstadig/humane-test-output "0.6.0"]]}})
